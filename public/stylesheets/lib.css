@@ -1,12 +1,13 @@
-*{border:1px solid red;}
+*{border:1px solid green;}
 * {
   box-sizing: border-box;
 }
 
 body, input {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: 'Playfair Display', serif;
+  /* font-family: 'Roboto Condensed', sans-serif; */
   margin: 0;
-  color: #244751;
+  color: hsl(193, 38%, 23%);
 }
 
 a {
