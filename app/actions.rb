@@ -46,10 +46,13 @@ get '/' do
     }]
   }
 
-  [@finstagram_post_shark, @finstagram_post_whale, @finstagram_post_marlin].to_s
+  @finstagram_posts =[@finstagram_post_shark, @finstagram_post_whale, @finstagram_post_marlin].to_s
   # finstagram_post.to_s
   
   erb(:index)
 
 end
  
+get '/login' do    # when a GET request comes into /login
+  erb(:login)      # render app/views/login.erb
+end
