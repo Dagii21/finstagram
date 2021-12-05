@@ -11,7 +11,5 @@
   </div>
 </header>
 <main role="main">
-  <% @finstagram_posts.each do |finstagram_post| %>
-    <%= erb(:'shared/finstagram_post', { locals: { finstagram_post: finstagram_post }}) %>
-  <% end %>
+  <%= erb(:'shared/finstagram_post', { locals: { finstagram_post: @finstagram_post }}) %>
 </main>
