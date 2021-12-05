@@ -24,6 +24,32 @@ end
 #post '/signup' do
 #  "Form submitted!"
 #end
+
 post '/signup' do
-  params.to_s
+  email      = params[:email]
+  avatar_url = params[:avatar_url]
+  username   = params[:username]
+  password   = params[:password]
+
+  @user = User.new({ email: email, avatar_url: avatar_url, username: username, password: password })
+
+  if @user.save
+    "User #{username} saved!"
+  else
+    erb(:signup)
+  end
 end
+
+post '/login' do
+  username = params[:username]
+  password = params[:password]
+
+  user = User.find_by(username: username)
+
+  if user && user.password == password
+    "Success!"
+  else
+    "Login failed."
+  end
+end
+
