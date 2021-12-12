@@ -5,6 +5,7 @@
 <% end %>
 
 <% @finstagram_posts.each do |finstagram_post| %>
+# Comment Form-g homepage deer gargahgyi
    <%= erb(:"shared/finstagram_post", { locals: { finstagram_post: finstagram_post, allow_new_comment: false }}) %>
 <% end %>
 

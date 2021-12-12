@@ -12,7 +12,7 @@
     <%= finstagram_post.like_count %> likes
     <span class="comment-count"><%= finstagram_post.comment_count %> comments</span>
   </div>
-  # suulchiin hicheel W6D1
+  # ******** To display Or to hide the comment form
     <% if current_user && allow_new_comment %>
     <%= erb(:"shared/new_comment", { locals: { finstagram_post: finstagram_post }}) %>
     <% end %> 
