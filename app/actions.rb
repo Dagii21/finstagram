@@ -27,6 +27,21 @@ get '/signup' do     # if a user navigates to the path "/signup",
   erb(:signup)       # render "app/views/signup.erb"
 end
 
+post '/signup' do
+  email      = params[:email]
+  avatar_url = params[:avatar_url]
+  username   = params[:username]
+  password   = params[:password]
+
+  @user = User.new({ email: email, avatar_url: avatar_url, username: username, password: password })
+
+  if @user.save
+    redirect to('/login')
+  else
+    erb(:signup)
+  end
+end
+
 
 post '/login' do
   username = params[:username]
